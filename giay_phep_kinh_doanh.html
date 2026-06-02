@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Giấy Chứng Nhận Đăng Ký Doanh Nghiệp - LOVE BANH MI COMPANY</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Tinos:ital,wght@0,400;0,700;1,400;1,700&family=Lexend:wght@400;700&display=swap" rel="stylesheet">
+  
+  <style>
+    /* Reset & Page setup */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
+    body {
+      background-color: #f0f2f5;
+      font-family: "Tinos", serif;
+      color: #000;
+      line-height: 1.4;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 20px;
+    }
+
+    /* Print Document Container */
+    .certificate-container {
+      background-color: #fcf8f2; /* Light cream paper look */
+      width: 210mm; /* A4 width */
+      height: 297mm; /* A4 height */
+      padding: 12mm 15mm;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+      position: relative;
+      border: 6px double #d97706; /* Golden double border */
+      outline: 1px solid #d97706;
+      outline-offset: -10px;
+      overflow: hidden;
+    }
+
+    /* Header styling */
+    .header-table {
+      width: 100%;
+      margin-bottom: 12px;
+      border-collapse: collapse;
+    }
+
+    .header-table td {
+      width: 50%;
+      vertical-align: top;
+      text-align: center;
+    }
+
+    .header-left {
+      font-size: 10pt;
+      font-weight: bold;
+    }
+
+    .header-right {
+      font-size: 10pt;
+      font-weight: bold;
+    }
+    
+    .national-slogan {
+      font-size: 10pt;
+      font-weight: bold;
+      text-transform: uppercase;
+      margin-bottom: 2px;
+    }
+
+    .national-sub {
+      font-size: 9pt;
+      font-weight: normal;
+      text-decoration: underline;
+    }
+
+    .divider-line {
+      width: 80px;
+      height: 1px;
+      background-color: #000;
+      margin: 4px auto 0 auto;
+    }
+
+    /* National Emblem */
+    .emblem-wrapper {
+      text-align: center;
+      margin: 10px 0;
+    }
+
+    .national-emblem {
+      width: 60px;
+      height: 60px;
+      filter: drop-shadow(0px 1px 2px rgba(0,0,0,0.1));
+    }
+
+    /* Document Title */
+    .doc-title {
+      text-align: center;
+      margin-bottom: 15px;
+    }
+
+    .doc-title h1 {
+      font-size: 14pt;
+      font-weight: bold;
+      color: #cf2027;
+      text-transform: uppercase;
+      margin-bottom: 4px;
+      letter-spacing: 0.5px;
+    }
+
+    .doc-title h2 {
+      font-size: 11pt;
+      font-weight: bold;
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+
+    .doc-title p {
+      font-size: 9.5pt;
+      font-style: italic;
+    }
+
+    /* Content details */
+    .section-title {
+      font-size: 10pt;
+      font-weight: bold;
+      text-transform: uppercase;
+      margin: 8px 0 4px 0;
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 2px;
+    }
+
+    .info-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 6px;
+    }
+
+    .info-table td {
+      padding: 2.5px 0;
+      vertical-align: top;
+      font-size: 9.5pt;
+    }
+
+    .info-label {
+      width: 32%;
+      font-weight: bold;
+    }
+
+    .info-value {
+      width: 68%;
+    }
+
+    .info-value.bold {
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+
+    .indent-item {
+      padding-left: 20px !important;
+    }
+
+    /* Signatures & Stamps section */
+    .footer-signatures {
+      margin-top: 20px;
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .footer-signatures td {
+      width: 50%;
+      vertical-align: top;
+      text-align: center;
+      font-size: 9.5pt;
+    }
+
+    .date-location {
+      font-style: italic;
+      margin-bottom: 4px;
+    }
+
+    .role-title {
+      font-weight: bold;
+      text-transform: uppercase;
+      margin-bottom: 40px; /* Space for stamp/signature */
+    }
+
+    .sign-name {
+      font-weight: bold;
+      font-size: 9.5pt;
+    }
+
+    /* Stamp overlap rendering */
+    .stamp-container {
+      position: relative;
+      display: inline-block;
+      width: 100%;
+      height: 90px;
+    }
+
+    .round-stamp {
+      position: absolute;
+      top: -30px;
+      left: 50%;
+      transform: translateX(-50%) rotate(-4deg);
+      width: 135px;
+      height: 135px;
+      z-index: 10;
+      pointer-events: none;
+    }
+    
+    .signature-overlay {
+      position: absolute;
+      top: 5px;
+      left: 55%;
+      transform: translateX(-50%) rotate(2deg);
+      width: 100px;
+      opacity: 0.85;
+      z-index: 5;
+    }
+
+    /* Print Styles Override */
+    .no-print {
+      margin-bottom: 20px;
+    }
+
+    .btn-print {
+      background-color: #cf2027;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      font-size: 14px;
+      font-weight: bold;
+      border-radius: 6px;
+      cursor: pointer;
+      font-family: 'Lexend', sans-serif;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: background-color 0.2s, transform 0.1s;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .btn-print:hover {
+      background-color: #b0181e;
+      transform: translateY(-1px);
+    }
+
+    .btn-print:active {
+      transform: translateY(1px);
+    }
+
+    /* Print Styles Override */
+    @media print {
+      @page {
+        size: A4;
+        margin: 0; /* REMOVES BROWSER PRINTER HEADERS AND FOOTERS */
+      }
+      body {
+        background-color: #fff;
+        padding: 0;
+        margin: 0;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      .certificate-container {
+        box-shadow: none;
+        border: 6px double #d97706; /* keep golden border */
+        outline: 1px solid #d97706;
+        width: 210mm;
+        height: 297mm;
+        margin: 0;
+        padding: 12mm 15mm;
+        page-break-inside: avoid;
+        box-sizing: border-box;
+      }
+      
+      .no-print {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Floating Print Controls (Hidden on print) -->
+  <div class="no-print">
+    <button class="btn-print" onclick="window.print()">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-printer"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
+      <span>Tải Xuống PDF (Ctrl + P)</span>
+    </button>
+  </div>
+
+  <!-- A4 Certificate Container -->
+  <div class="certificate-container">
+    
+    <!-- Top Headers -->
+    <table class="header-table">
+      <tr>
+        <td>
+          <div class="header-left">
+            SỞ KẾ HOẠCH VÀ ĐẦU TƯ<br>
+            THÀNH PHỐ HỒ CHÍ MINH<br>
+            <span style="font-weight: bold; text-decoration: underline;">PHÒNG ĐĂNG KÝ KINH DOANH</span>
+          </div>
+        </td>
+        <td>
+          <div class="header-right">
+            <div class="national-slogan">CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM</div>
+            <div class="national-sub">Độc lập - Tự do - Hạnh phúc</div>
+            <div class="divider-line"></div>
+          </div>
+        </td>
+      </tr>
+    </table>
+
+    <!-- National Emblem (Vector Inline SVG) -->
+    <div class="emblem-wrapper">
+      <svg class="national-emblem" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" style="width: 75px; height: 75px;">
+        <!-- Circular Red Shield -->
+        <circle cx="50" cy="50" r="32" fill="#da251d" stroke="#fcd116" stroke-width="1.5" />
+        
+        <!-- Five-pointed Star in Center -->
+        <polygon points="50,28 53,38 63,38 55,45 58,55 50,49 42,55 45,45 37,38 47,38" fill="#fcd116" />
+        
+        <!-- Cogwheel at the bottom -->
+        <circle cx="50" cy="80" r="8" fill="#fcd116" />
+        <circle cx="50" cy="80" r="5" fill="#da251d" />
+        
+        <!-- Wheat / Rice ears surrounding -->
+        <path d="M28,68 Q20,50 30,30 Q35,40 34,55 Q33,65 37,70" fill="none" stroke="#fcd116" stroke-width="2" />
+        <path d="M72,68 Q80,50 70,30 Q65,40 66,55 Q67,65 63,70" fill="none" stroke="#fcd116" stroke-width="2" />
+        
+        <!-- Grains of Rice (Left side) -->
+        <ellipse cx="25" cy="35" rx="2" ry="4" transform="rotate(-30 25 35)" fill="#fcd116" />
+        <ellipse cx="23" cy="43" rx="2" ry="4" transform="rotate(-20 23 43)" fill="#fcd116" />
+        <ellipse cx="23" cy="51" rx="2" ry="4" transform="rotate(-10 23 51)" fill="#fcd116" />
+        <ellipse cx="25" cy="59" rx="2" ry="4" transform="rotate(5 25 59)" fill="#fcd116" />
+        <ellipse cx="28" cy="67" rx="2" ry="4" transform="rotate(20 28 67)" fill="#fcd116" />
+        
+        <!-- Grains of Rice (Right side) -->
+        <ellipse cx="75" cy="35" rx="2" ry="4" transform="rotate(30 75 35)" fill="#fcd116" />
+        <ellipse cx="77" cy="43" rx="2" ry="4" transform="rotate(20 77 43)" fill="#fcd116" />
+        <ellipse cx="77" cy="51" rx="2" ry="4" transform="rotate(10 77 51)" fill="#fcd116" />
+        <ellipse cx="75" cy="59" rx="2" ry="4" transform="rotate(-5 75 59)" fill="#fcd116" />
+        <ellipse cx="72" cy="67" rx="2" ry="4" transform="rotate(-20 72 67)" fill="#fcd116" />
+        
+        <!-- Red Ribbon wrapping the wheat/rice -->
+        <path d="M 38,76 Q 50,84 62,76 L 64,81 Q 50,89 36,81 Z" fill="#da251d" stroke="#fcd116" stroke-width="0.5" />
+        <path d="M 28,68 Q 30,73 38,76 L 36,81 Q 28,77 26,71 Z" fill="#da251d" stroke="#fcd116" stroke-width="0.5" />
+        <path d="M 72,68 Q 70,73 62,76 L 64,81 Q 72,77 74,71 Z" fill="#da251d" stroke="#fcd116" stroke-width="0.5" />
+      </svg>
+    </div>
+
+    <!-- Title -->
+    <div class="doc-title">
+      <h1>GIẤY CHỨNG NHẬN ĐĂNG KÝ DOANH NGHIỆP</h1>
+      <h2>CÔNG TY TRÁCH NHIỆM HỮU HẠN MỘT THÀNH VIÊN</h2>
+      <p>Mã số doanh nghiệp: 0318979884 - Đăng ký lần đầu: ngày 02 tháng 06 năm 2025</p>
+    </div>
+
+    <!-- 1. Company Name Section -->
+    <div class="section-title">1. Tên doanh nghiệp</div>
+    <table class="info-table">
+      <tr>
+        <td class="info-label">Tên doanh nghiệp viết bằng tiếng Việt:</td>
+        <td class="info-value bold">CÔNG TY TNHH LOVE BÁNH MÌ</td>
+      </tr>
+      <tr>
+        <td class="info-label">Tên doanh nghiệp viết bằng tiếng nước ngoài:</td>
+        <td class="info-value bold">LOVE BANH MI COMPANY</td>
+      </tr>
+      <tr>
+        <td class="info-label">Tên doanh nghiệp viết tắt:</td>
+        <td class="info-value bold">LOVE BANH MI CO., LTD</td>
+      </tr>
+    </table>
+
+    <!-- 2. Address & Contact Section -->
+    <div class="section-title">2. Địa chỉ trụ sở chính</div>
+    <table class="info-table">
+      <tr>
+        <td class="info-label">Địa chỉ đăng ký pháp lý:</td>
+        <td class="info-value">B17, Tân Thới Nhì 5, ấp Thống Nhất 1, Xã Tân Thới Nhì, Huyện Hóc Môn, Thành phố Hồ Chí Minh, Việt Nam, Thành phố Hồ Chí Minh, Huyện Hóc Môn 71711, Việt Nam</td>
+      </tr>
+      <tr>
+        <td class="info-label">Điện thoại liên hệ:</td>
+        <td class="info-value">+84383330278</td>
+      </tr>
+      <tr>
+        <td class="info-label">Email doanh nghiệp:</td>
+        <td class="info-value">lienhe@lovebanhmi.work.gd</td>
+      </tr>
+      <tr>
+        <td class="info-label">Website kinh doanh:</td>
+        <td class="info-value">https://lovebanhmi.work.gd</td>
+      </tr>
+    </table>
+
+    <!-- 3. Capital Section -->
+    <div class="section-title">3. Vốn điều lệ</div>
+    <table class="info-table">
+      <tr>
+        <td class="info-label">Vốn điều lệ:</td>
+        <td class="info-value">5.000.000.000 VNĐ (Năm tỷ đồng Việt Nam)</td>
+      </tr>
+    </table>
+
+    <!-- 4. Legal Representative Section -->
+    <div class="section-title">4. Người đại diện theo pháp luật của công ty</div>
+    <table class="info-table">
+      <tr>
+        <td class="info-label">Họ và tên:</td>
+        <td class="info-value bold">LÊ CÔNG THỊNH</td>
+      </tr>
+      <tr>
+        <td class="info-label">Chức danh:</td>
+        <td class="info-value">Giám đốc</td>
+      </tr>
+      <tr>
+        <td class="info-label">Giới tính:</td>
+        <td class="info-value">Nam</td>
+      </tr>
+      <tr>
+        <td class="info-label">Ngày sinh:</td>
+        <td class="info-value">15/09/1992</td>
+      </tr>
+      <tr>
+        <td class="info-label">Quốc tịch:</td>
+        <td class="info-value">Việt Nam</td>
+      </tr>
+      <tr>
+        <td class="info-label">Loại giấy tờ pháp lý:</td>
+        <td class="info-value">Căn cước công dân</td>
+      </tr>
+      <tr>
+        <td class="info-label">Số căn cước công dân:</td>
+        <td class="info-value">079092008745</td>
+      </tr>
+      <tr>
+        <td class="info-label">Địa chỉ thường trú:</td>
+        <td class="info-value">B17, Tân Thới Nhì 5, ấp Thống Nhất 1, Xã Tân Thới Nhì, Huyện Hóc Môn, Thành phố Hồ Chí Minh, Việt Nam</td>
+      </tr>
+      <tr>
+        <td class="info-label">Chỗ ở hiện tại:</td>
+        <td class="info-value">B17, Tân Thới Nhì 5, ấp Thống Nhất 1, Xã Tân Thới Nhì, Huyện Hóc Môn, Thành phố Hồ Chí Minh, Việt Nam</td>
+      </tr>
+    </table>
+
+    <!-- Bottom signatures and official stamps -->
+    <table class="footer-signatures">
+      <tr>
+        <td>
+          <!-- Left side: Certified stamp with Company Seal -->
+        </td>
+        <td>
+          <!-- Right side: Registrar signing and DPI seal -->
+          <div class="date-location">TP. Hồ Chí Minh, ngày 02 tháng 06 năm 2025</div>
+          <div class="role-title">
+            KT. TRƯỞNG PHÒNG<br>
+            PHÓ TRƯỞNG PHÒNG
+          </div>
+          
+          <div class="stamp-container">
+            <!-- Simulated Department of Planning & Investment Seal -->
+            <svg class="round-stamp" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="130" height="130">
+              <circle cx="100" cy="100" r="90" fill="none" stroke="#e02424" stroke-width="2.5" stroke-dasharray="2000" />
+              <circle cx="100" cy="100" r="58" fill="none" stroke="#e02424" stroke-width="1.2" />
+              
+              <path id="dpi-top-path" d="M 24,100 A 76,76 0 0,1 176,100" fill="none" />
+              <path id="dpi-bottom-path" d="M 24,100 A 76,76 0 0,0 176,100" fill="none" />
+              
+              <text fill="#e02424" font-family="sans-serif" font-size="9" font-weight="bold" letter-spacing="1">
+                <textPath href="#dpi-top-path" startOffset="50%" text-anchor="middle">SỞ KẾ HOẠCH VÀ ĐẦU TƯ</textPath>
+              </text>
+              
+              <text fill="#e02424" font-family="sans-serif" font-size="8" font-weight="bold" letter-spacing="1">
+                <textPath href="#dpi-bottom-path" startOffset="50%" text-anchor="middle">★ THÀNH PHỐ HỒ CHÍ MINH ★</textPath>
+              </text>
+              
+              <text x="100" y="93" fill="#e02424" font-family="sans-serif" font-size="9" font-weight="bold" text-anchor="middle">PHÒNG</text>
+              <text x="100" y="108" fill="#e02424" font-family="sans-serif" font-size="9" font-weight="bold" text-anchor="middle">ĐĂNG KÝ</text>
+              <text x="100" y="123" fill="#e02424" font-family="sans-serif" font-size="9" font-weight="bold" text-anchor="middle">KINH DOANH</text>
+            </svg>
+            <!-- Mock blue signature path overlay -->
+            <svg class="signature-overlay" viewBox="0 0 100 60" xmlns="http://www.w3.org/2000/svg">
+              <path d="M 10,40 Q 30,10 50,35 T 90,20 Q 80,45 60,40" fill="none" stroke="#1b3abb" stroke-width="2" stroke-linecap="round"/>
+              <path d="M 25,30 Q 55,5 70,30" fill="none" stroke="#1b3abb" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+          
+          <div class="sign-name">Nguyễn Thị Hồng Vân</div>
+        </td>
+      </tr>
+    </table>
+
+  </div>
+
+</body>
+</html>

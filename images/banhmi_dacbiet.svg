@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="100%" height="100%" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <radialGradient id="bgGlowDacBiet" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#f59e0b" stop-opacity="0.15" />
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0" />
+    </radialGradient>
+    <linearGradient id="crustDacBiet" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f59e0b" />
+      <stop offset="70%" stop-color="#d97706" />
+      <stop offset="100%" stop-color="#78350f" />
+    </linearGradient>
+    <linearGradient id="hamDacBiet" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#fda4af" />
+      <stop offset="100%" stop-color="#e11d48" />
+    </linearGradient>
+    <filter id="cardShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#000000" flood-opacity="0.2" />
+    </filter>
+  </defs>
+
+  <!-- Background color block to ensure a premium feel -->
+  <rect width="100%" height="100%" fill="#fffbf7" />
+  <circle cx="200" cy="150" r="130" fill="url(#bgGlowDacBiet)" />
+
+  <!-- Special Badge Tag -->
+  <g transform="translate(320, 40)">
+    <circle cx="0" cy="0" r="24" fill="#cf2027" />
+    <path d="M 0,10 C 0,10 -6,4 -6,0 C -6,-4 -3,-7 0,-4 C 3,-7 6,-4 6,0 C 6,4 0,10 0,10 Z" fill="#ffffff" transform="scale(0.8) translate(0, -2)" />
+    <text x="0" y="16" fill="#ffffff" font-family="sans-serif" font-size="8" font-weight="bold" text-anchor="middle">LOVE</text>
+  </g>
+
+  <!-- Banh Mi Group -->
+  <g filter="url(#cardShadow)" transform="translate(10, 10)">
+    <!-- Back Crust -->
+    <path d="M 70,180 C 60,150 110,110 160,100 C 220,90 310,100 340,130 C 360,145 350,170 330,180 C 280,205 120,210 70,180 Z" fill="url(#crustDacBiet)" />
+    
+    <!-- Paté (Spread) -->
+    <path d="M 80,165 Q 200,140 320,160 Q 200,180 80,165" fill="#6b6661" />
+
+    <!-- Cucumber slices -->
+    <ellipse cx="120" cy="150" rx="20" ry="8" fill="#22c55e" transform="rotate(-15, 120, 150)" stroke="#f0fdf4" stroke-width="1.5" />
+    <ellipse cx="190" cy="145" rx="22" ry="9" fill="#22c55e" transform="rotate(-10, 190, 145)" stroke="#f0fdf4" stroke-width="1.5" />
+    <ellipse cx="260" cy="145" rx="22" ry="9" fill="#22c55e" transform="rotate(5, 260, 145)" stroke="#f0fdf4" stroke-width="1.5" />
+
+    <!-- Ham/Cold Cuts -->
+    <path d="M 100,160 Q 140,135 180,155" fill="none" stroke="url(#hamDacBiet)" stroke-width="12" stroke-linecap="round" />
+    <path d="M 170,155 Q 210,130 250,150" fill="none" stroke="url(#hamDacBiet)" stroke-width="12" stroke-linecap="round" />
+    <path d="M 240,150 Q 280,130 320,155" fill="none" stroke="url(#hamDacBiet)" stroke-width="12" stroke-linecap="round" />
+
+    <!-- Carrot & Radish Pickles -->
+    <g stroke="#f97316" stroke-width="3.5" stroke-linecap="round">
+      <line x1="110" y1="140" x2="140" y2="150" />
+      <line x1="150" y1="135" x2="180" y2="145" />
+      <line x1="210" y1="135" x2="240" y2="145" />
+      <line x1="270" y1="135" x2="300" y2="145" />
+      <!-- White pickles -->
+      <line x1="130" y1="142" x2="160" y2="138" stroke="#e7e5e4" stroke-width="2.5" />
+      <line x1="230" y1="138" x2="260" y2="142" stroke="#e7e5e4" stroke-width="2.5" />
+    </g>
+
+    <!-- Cilantro Leaf -->
+    <g fill="#15803d">
+      <path d="M 140,135 C 135,128 142,120 148,125 C 154,120 160,128 155,135 Z" />
+      <path d="M 220,130 C 215,123 222,115 228,120 C 234,115 240,123 235,130 Z" />
+      <path d="M 280,130 C 275,123 282,115 288,120 C 294,115 300,123 295,130 Z" />
+      <path d="M 110,148 Q 200,130 310,145" fill="none" stroke="#16a34a" stroke-width="1.8" />
+    </g>
+
+    <!-- Front Crust Overlay -->
+    <path d="M 68,160 C 58,130 110,90 160,80 C 225,70 305,80 338,115 C 358,130 358,155 330,165 C 280,135 120,130 68,160 Z" fill="url(#crustDacBiet)" />
+    <path d="M 85,135 C 120,105 200,90 280,95 C 310,100 330,115 335,130 C 285,110 150,110 85,135 Z" fill="#fef3c7" opacity="0.4" />
+
+    <!-- Slashes -->
+    <path d="M 130,115 Q 145,110 150,128" fill="none" stroke="#78350f" stroke-width="4.5" stroke-linecap="round" />
+    <path d="M 200,105 Q 215,100 220,118" fill="none" stroke="#78350f" stroke-width="4.5" stroke-linecap="round" />
+    <path d="M 270,108 Q 285,103 290,121" fill="none" stroke="#78350f" stroke-width="4.5" stroke-linecap="round" />
+  </g>
+</svg>

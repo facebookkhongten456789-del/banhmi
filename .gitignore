@@ -1,0 +1,13 @@
+# Executables and Installer files
+cloudflared-windows-amd64.exe
+cloudflared/
+
+# Node dependencies
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS files
+.DS_Store
+Thumbs.db

@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="100%" height="100%" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <radialGradient id="bgGlowGaxe" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#fcd34d" stop-opacity="0.2" />
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0" />
+    </radialGradient>
+    <linearGradient id="crustGaxe" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fbbf24" />
+      <stop offset="70%" stop-color="#d97706" />
+      <stop offset="100%" stop-color="#78350f" />
+    </linearGradient>
+    <filter id="cardShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#000000" flood-opacity="0.2" />
+    </filter>
+  </defs>
+
+  <rect width="100%" height="100%" fill="#fffbf7" />
+  <circle cx="200" cy="150" r="130" fill="url(#bgGlowGaxe)" />
+
+  <!-- Special Tag -->
+  <g transform="translate(320, 40)">
+    <circle cx="0" cy="0" r="24" fill="#fbbf24" />
+    <text x="0" y="4" fill="#78350f" font-family="sans-serif" font-size="8" font-weight="bold" text-anchor="middle">BƠ</text>
+    <text x="0" y="14" fill="#78350f" font-family="sans-serif" font-size="8" font-weight="bold" text-anchor="middle">TỎI</text>
+  </g>
+
+  <!-- Banh Mi Group -->
+  <g filter="url(#cardShadow)" transform="translate(10, 10)">
+    <!-- Back Crust -->
+    <path d="M 70,180 C 60,150 110,110 160,100 C 220,90 310,100 340,130 C 360,145 350,170 330,180 C 280,205 120,210 70,180 Z" fill="url(#crustGaxe)" />
+    
+    <!-- Yellow Butter-Garlic Sauce Spread -->
+    <path d="M 90,165 C 130,152 270,150 310,163 C 280,175 120,178 90,165 Z" fill="#f59e0b" opacity="0.85" />
+    
+    <!-- Cucumber slices -->
+    <ellipse cx="140" cy="153" rx="20" ry="8" fill="#16a34a" transform="rotate(-10, 140, 153)" stroke="#f0fdf4" stroke-width="1" />
+    <ellipse cx="240" cy="148" rx="20" ry="8" fill="#16a34a" transform="rotate(5, 240, 148)" stroke="#f0fdf4" stroke-width="1" />
+
+    <!-- Shredded Chicken (Gà Xé) Pile -->
+    <!-- Lots of fine wavy strokes to look like chicken floss / shredded chicken -->
+    <g stroke="#d97706" stroke-width="2" stroke-linecap="round" fill="none">
+      <!-- Cluster 1 -->
+      <path d="M 100,150 Q 115,140 130,152" />
+      <path d="M 105,145 Q 120,135 135,148" />
+      <path d="M 112,138 Q 125,145 138,135" stroke="#f59e0b" stroke-width="1.5" />
+      <path d="M 95,142 Q 115,138 125,148" stroke="#b45309" stroke-width="1" />
+      
+      <!-- Cluster 2 -->
+      <path d="M 150,145 Q 170,132 190,148" />
+      <path d="M 155,138 Q 175,128 195,140" stroke="#f59e0b" />
+      <path d="M 162,132 Q 180,138 198,130" stroke="#b45309" stroke-width="1" />
+      <path d="M 145,140 Q 165,135 185,145" />
+
+      <!-- Cluster 3 -->
+      <path d="M 210,145 Q 230,132 250,148" />
+      <path d="M 215,138 Q 235,128 255,140" stroke="#f59e0b" />
+      <path d="M 205,140 Q 225,135 245,145" />
+      
+      <!-- Cluster 4 -->
+      <path d="M 270,150 Q 285,140 300,152" />
+      <path d="M 275,145 Q 290,135 305,148" stroke="#b45309" stroke-width="1" />
+      <path d="M 282,138 Q 295,145 308,135" stroke="#f59e0b" />
+    </g>
+
+    <!-- Creamy Butter Sauce Droplets -->
+    <path d="M 125,152 C 125,155 122,158 120,158 C 118,158 115,155 115,152 C 115,149 120,145 120,145 C 120,145 125,149 125,152 Z" fill="#fbbf24" />
+    <path d="M 185,148 C 185,151 182,154 180,154 C 178,154 175,151 175,148 C 175,145 180,141 180,141 C 180,141 185,145 185,148 Z" fill="#fbbf24" />
+    <path d="M 255,145 C 255,148 252,151 250,151 C 248,151 245,148 245,145 C 245,142 250,138 250,138 C 250,138 255,142 255,145 Z" fill="#fbbf24" />
+
+    <!-- Green Herbs (Scallions / Cilantro) -->
+    <g fill="#15803d">
+      <path d="M 130,135 C 125,128 132,120 138,125 C 144,120 150,128 145,135 Z" />
+      <path d="M 250,130 C 245,123 252,115 258,120 C 264,115 270,123 265,130 Z" />
+      <path d="M 115,145 Q 200,132 290,142" fill="none" stroke="#16a34a" stroke-width="1.5" />
+    </g>
+
+    <!-- Front Crust Overlay -->
+    <path d="M 68,160 C 58,130 110,90 160,80 C 225,70 305,80 338,115 C 358,130 358,155 330,165 C 280,135 120,130 68,160 Z" fill="url(#crustGaxe)" />
+    <path d="M 85,135 C 120,105 200,90 280,95 C 310,100 330,115 335,130 C 285,110 150,110 85,135 Z" fill="#fef3c7" opacity="0.4" />
+
+    <!-- Slashes -->
+    <path d="M 130,115 Q 145,110 150,128" fill="none" stroke="#78350f" stroke-width="4.5" stroke-linecap="round" />
+    <path d="M 200,105 Q 215,100 220,118" fill="none" stroke="#78350f" stroke-width="4.5" stroke-linecap="round" />
+    <path d="M 270,108 Q 285,103 290,121" fill="none" stroke="#78350f" stroke-width="4.5" stroke-linecap="round" />
+  </g>
+</svg>

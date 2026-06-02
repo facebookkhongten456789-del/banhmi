@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="100%" height="100%" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <radialGradient id="bgGlowHeoQuay" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ea580c" stop-opacity="0.15" />
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0" />
+    </radialGradient>
+    <linearGradient id="crustHeoQuay" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fbbf24" />
+      <stop offset="70%" stop-color="#d97706" />
+      <stop offset="100%" stop-color="#78350f" />
+    </linearGradient>
+    <!-- Pork Layer Gradients -->
+    <linearGradient id="porkSkin" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ea580c" />
+      <stop offset="100%" stop-color="#b45309" />
+    </linearGradient>
+    <filter id="cardShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#000000" flood-opacity="0.2" />
+    </filter>
+  </defs>
+
+  <rect width="100%" height="100%" fill="#fffbf7" />
+  <circle cx="200" cy="150" r="130" fill="url(#bgGlowHeoQuay)" />
+
+  <!-- Special Tag -->
+  <g transform="translate(320, 40)">
+    <circle cx="0" cy="0" r="24" fill="#d97706" />
+    <text x="0" y="4" fill="#ffffff" font-family="sans-serif" font-size="8" font-weight="bold" text-anchor="middle">GIÒN</text>
+    <text x="0" y="14" fill="#ffffff" font-family="sans-serif" font-size="8" font-weight="bold" text-anchor="middle">BÌ</text>
+  </g>
+
+  <!-- Banh Mi Group -->
+  <g filter="url(#cardShadow)" transform="translate(10, 10)">
+    <!-- Back Crust -->
+    <path d="M 70,180 C 60,150 110,110 160,100 C 220,90 310,100 340,130 C 360,145 350,170 330,180 C 280,205 120,210 70,180 Z" fill="url(#crustHeoQuay)" />
+    
+    <!-- Rich Sauce Dripping -->
+    <path d="M 90,162 C 140,150 200,145 310,158 C 300,165 240,172 200,170 C 160,172 110,168 90,162 Z" fill="#451a03" />
+
+    <!-- Cucumber Slices -->
+    <ellipse cx="130" cy="152" rx="22" ry="9" fill="#16a34a" transform="rotate(-12, 130, 152)" stroke="#f0fdf4" stroke-width="1.5" />
+    <ellipse cx="250" cy="148" rx="22" ry="9" fill="#16a34a" transform="rotate(8, 250, 148)" stroke="#f0fdf4" stroke-width="1.5" />
+
+    <!-- Crispy Pork Belly Blocks (Heo Quay) -->
+    <!-- Block 1 -->
+    <g transform="translate(100, 135) rotate(-5)">
+      <!-- Meat Base -->
+      <rect x="0" y="10" width="30" height="20" rx="3" fill="#fca5a5" />
+      <rect x="0" y="5" width="30" height="5" fill="#f5f5f4" />
+      <!-- Crispy skin -->
+      <rect x="0" y="0" width="30" height="5" rx="1" fill="url(#porkSkin)" />
+      <!-- Detail line -->
+      <line x1="15" y1="10" x2="15" y2="30" stroke="#fca5a5" stroke-width="1" />
+    </g>
+    <!-- Block 2 -->
+    <g transform="translate(150, 128) rotate(-10)">
+      <rect x="0" y="10" width="32" height="22" rx="3" fill="#fca5a5" stroke="#ef4444" stroke-width="0.5" />
+      <rect x="0" y="5" width="32" height="5" fill="#f5f5f4" />
+      <rect x="0" y="0" width="32" height="5" rx="1" fill="url(#porkSkin)" />
+    </g>
+    <!-- Block 3 -->
+    <g transform="translate(200, 128) rotate(5)">
+      <rect x="0" y="10" width="30" height="20" rx="3" fill="#fca5a5" />
+      <rect x="0" y="5" width="30" height="5" fill="#f5f5f4" />
+      <rect x="0" y="0" width="30" height="5" rx="1" fill="url(#porkSkin)" />
+    </g>
+    <!-- Block 4 -->
+    <g transform="translate(260, 135) rotate(12)">
+      <rect x="0" y="10" width="32" height="20" rx="3" fill="#fca5a5" stroke="#ef4444" stroke-width="0.5" />
+      <rect x="0" y="5" width="32" height="5" fill="#f5f5f4" />
+      <rect x="0" y="0" width="32" height="5" rx="1" fill="url(#porkSkin)" />
+    </g>
+
+    <!-- Herbs (Cilantro / Scallion Threads) -->
+    <g stroke="#15803d" stroke-width="2" stroke-linecap="round" fill="none">
+      <path d="M 95,145 Q 120,135 150,140" />
+      <path d="M 180,140 Q 210,130 240,142" />
+      <path d="M 230,142 Q 270,130 300,135" />
+    </g>
+    
+    <!-- Red Chili Slices -->
+    <g stroke="#dc2626" stroke-width="2" fill="none" transform="translate(180, 145) rotate(-15)">
+      <circle cx="0" cy="0" r="6" fill="#fff" stroke="#dc2626" stroke-width="2" />
+      <circle cx="0" cy="0" r="2" fill="#dc2626" />
+    </g>
+    <g stroke="#dc2626" stroke-width="2" fill="none" transform="translate(245, 140) rotate(15)">
+      <circle cx="0" cy="0" r="6" fill="#fff" stroke="#dc2626" stroke-width="2" />
+      <circle cx="0" cy="0" r="2" fill="#dc2626" />
+    </g>
+
+    <!-- Front Crust Overlay -->
+    <path d="M 68,160 C 58,130 110,90 160,80 C 225,70 305,80 338,115 C 358,130 358,155 330,165 C 280,135 120,130 68,160 Z" fill="url(#crustHeoQuay)" />
+    <path d="M 85,135 C 120,105 200,90 280,95 C 310,100 330,115 335,130 C 285,110 150,110 85,135 Z" fill="#fef3c7" opacity="0.4" />
+
+    <!-- Slashes -->
+    <path d="M 130,115 Q 145,110 150,128" fill="none" stroke="#78350f" stroke-width="4.5" stroke-linecap="round" />
+    <path d="M 200,105 Q 215,100 220,118" fill="none" stroke="#78350f" stroke-width="4.5" stroke-linecap="round" />
+    <path d="M 270,108 Q 285,103 290,121" fill="none" stroke="#78350f" stroke-width="4.5" stroke-linecap="round" />
+  </g>
+</svg>

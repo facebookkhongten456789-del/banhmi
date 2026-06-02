@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>PDF Viewer / Text Extractor</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
+</head>
+<body>
+  <pre id="output" style="white-space: pre-wrap; font-family: monospace; font-size: 14px; padding: 20px; background: #f4f4f4; border: 1px solid #ccc;"></pre>
+  <script>
+    pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.worker.min.js';
+    
+    fetch('Quyet_dinh_thanh_lap_LOVE_BANH_MI_Xac_Minh_Gốc.pdf')
+      .then(res => {
+        if (!res.ok) throw new Error("Failed to fetch PDF file. Status: " + res.status);
+        return res.arrayBuffer();
+      })
+      .then(data => pdfjsLib.getDocument({data: data}).promise)
+      .then(async pdf => {
+        let text = "";
+        for (let i = 1; i <= pdf.numPages; i++) {
+          let page = await pdf.getPage(i);
+          let content = await page.getTextContent();
+          // We can try to reconstruct lines by checking transform Y coordinates if needed,
+          // but for basic text view, joining items is a good start.
+          let lastY = -1;
+          let pageText = "";
+          for (let item of content.items) {
+            if (lastY !== -1 && Math.abs(item.transform[5] - lastY) > 5) {
+              pageText += "\n";
+            }
+            pageText += item.str + " ";
+            lastY = item.transform[5];
+          }
+          text += `--- PAGE ${i} ---\n` + pageText + '\n\n';
+        }
+        document.getElementById('output').textContent = text;
+      })
+      .catch(err => {
+        document.getElementById('output').textContent = "Error: " + err.message + "\nStack: " + err.stack;
+      });
+  </script>
+</body>
+</html>

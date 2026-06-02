@@ -1,0 +1,143 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <!-- Background Glow -->
+    <radialGradient id="bgGlow" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+      <stop offset="0%" stop-color="#d97706" stop-opacity="0.25" />
+      <stop offset="100%" stop-color="#15110e" stop-opacity="0" />
+    </radialGradient>
+
+    <!-- Baguette Gradients -->
+    <linearGradient id="crustGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fbbf24" />  <!-- Golden Yellow -->
+      <stop offset="50%" stop-color="#d97706" /> <!-- Golden Amber -->
+      <stop offset="100%" stop-color="#78350f" /><!-- Rich Brown -->
+    </linearGradient>
+    
+    <linearGradient id="crustHighlight" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#fef3c7" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#fbbf24" stop-opacity="0" />
+    </linearGradient>
+
+    <!-- Shadow -->
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="15" stdDeviation="15" flood-color="#000000" flood-opacity="0.6" />
+    </filter>
+
+    <!-- Fillings Gradients -->
+    <linearGradient id="pateGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#78716c" />
+      <stop offset="100%" stop-color="#57534e" />
+    </linearGradient>
+    <linearGradient id="hamGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#fda4af" />
+      <stop offset="100%" stop-color="#f43f5e" />
+    </linearGradient>
+    <linearGradient id="cucumberGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#86efac" />
+      <stop offset="100%" stop-color="#16a34a" />
+    </linearGradient>
+    <linearGradient id="carrotGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fb923c" />
+      <stop offset="100%" stop-color="#ea580c" />
+    </linearGradient>
+  </defs>
+
+  <!-- Warm background glow -->
+  <circle cx="400" cy="250" r="300" fill="url(#bgGlow)" />
+
+  <!-- Floating Sparkles / Bubbles -->
+  <g opacity="0.6">
+    <circle cx="250" cy="120" r="6" fill="#fbbf24" opacity="0.8" />
+    <circle cx="550" cy="180" r="4" fill="#fbbf24" opacity="0.5" />
+    <circle cx="320" cy="380" r="8" fill="#fbbf24" opacity="0.3" />
+    <path d="M 520,100 L 525,110 L 535,112 L 527,120 L 530,130 L 520,123 L 510,130 L 513,120 L 505,112 L 515,110 Z" fill="#fbbf24" opacity="0.7" transform="scale(0.8) translate(150, 20)" />
+  </g>
+
+  <!-- Main Sandwich Group with drop shadow -->
+  <g filter="url(#shadow)" transform="translate(50, 10)">
+    
+    <!-- BACK OF THE BAGUETTE (BREAD BOTTOM) -->
+    <path d="M 120,290 C 100,240 180,180 250,170 C 350,150 550,160 620,210 C 650,230 650,270 610,290 C 530,330 200,340 120,290 Z" fill="url(#crustGrad)" />
+
+    <!-- PATÉ LAYER (Bottom spread) -->
+    <path d="M 140,265 C 190,245 450,225 590,250 C 580,270 480,290 140,265 Z" fill="url(#pateGrad)" />
+
+    <!-- CUCUMBER SLICES -->
+    <!-- Slice 1 -->
+    <ellipse cx="200" cy="245" rx="35" ry="15" fill="url(#cucumberGrad)" transform="rotate(-15, 200, 245)" stroke="#f0fdf4" stroke-width="2" />
+    <circle cx="200" cy="245" r="8" fill="#bbf7d0" opacity="0.5" />
+    <!-- Slice 2 -->
+    <ellipse cx="320" cy="235" rx="38" ry="16" fill="url(#cucumberGrad)" transform="rotate(-10, 320, 235)" stroke="#f0fdf4" stroke-width="2" />
+    <circle cx="320" cy="235" r="9" fill="#bbf7d0" opacity="0.5" />
+    <!-- Slice 3 -->
+    <ellipse cx="440" cy="235" rx="38" ry="16" fill="url(#cucumberGrad)" transform="rotate(-5, 440, 235)" stroke="#f0fdf4" stroke-width="2" />
+    <circle cx="440" cy="235" r="9" fill="#bbf7d0" opacity="0.5" />
+    <!-- Slice 4 -->
+    <ellipse cx="550" cy="245" rx="35" ry="15" fill="url(#cucumberGrad)" transform="rotate(10, 550, 245)" stroke="#f0fdf4" stroke-width="2" />
+    <circle cx="550" cy="245" r="8" fill="#bbf7d0" opacity="0.5" />
+
+    <!-- HAM & PORK SLICES (Thịt nguội / Xá xíu) -->
+    <!-- Ham Layer 1 -->
+    <path d="M 160,255 Q 230,220 300,250 Q 230,270 160,255" fill="url(#hamGrad)" stroke="#ffe4e6" stroke-width="1.5" />
+    <path d="M 280,245 Q 360,215 440,240 Q 360,265 280,245" fill="url(#hamGrad)" stroke="#ffe4e6" stroke-width="1.5" />
+    <path d="M 420,240 Q 500,215 580,245 Q 500,265 420,240" fill="url(#hamGrad)" stroke="#ffe4e6" stroke-width="1.5" />
+
+    <!-- PICKLED CARROT & DAIKON (Đồ chua) -->
+    <g stroke="url(#carrotGrad)" stroke-width="4" stroke-linecap="round">
+      <line x1="180" y1="230" x2="220" y2="245" />
+      <line x1="190" y1="245" x2="230" y2="235" />
+      <line x1="260" y1="225" x2="310" y2="235" />
+      <line x1="280" y1="240" x2="330" y2="220" />
+      <line x1="370" y1="220" x2="420" y2="235" />
+      <line x1="390" y1="235" x2="430" y2="225" />
+      <line x1="480" y1="225" x2="530" y2="235" />
+      <line x1="500" y1="240" x2="540" y2="225" />
+      <!-- White Daikon Strips -->
+      <line x1="210" y1="235" x2="250" y2="245" stroke="#f5f5f4" stroke-width="3" />
+      <line x1="330" y1="225" x2="370" y2="235" stroke="#f5f5f4" stroke-width="3" />
+      <line x1="450" y1="225" x2="490" y2="235" stroke="#f5f5f4" stroke-width="3" />
+    </g>
+
+    <!-- CILANTRO / CORIANDER (Rau thơm) -->
+    <g fill="#15803d">
+      <!-- Leaf cluster 1 -->
+      <path d="M 220,220 C 210,210 220,195 230,205 C 240,195 250,210 240,220 C 250,230 230,235 220,220 Z" />
+      <!-- Leaf cluster 2 -->
+      <path d="M 340,210 C 330,200 340,185 350,195 C 360,185 370,200 360,210 C 370,220 350,225 340,210 Z" />
+      <!-- Leaf cluster 3 -->
+      <path d="M 460,210 C 450,200 460,185 470,195 C 480,185 490,200 480,210 C 490,220 470,225 460,210 Z" />
+      <!-- Stem lines -->
+      <path d="M 180,235 Q 320,210 540,230" fill="none" stroke="#16a34a" stroke-width="2.5" stroke-linecap="round" />
+    </g>
+
+    <!-- FRONT OF THE BAGUETTE (BREAD TOP OVERLAY WITH CRISPY CUTS) -->
+    <path d="M 115,260 C 105,210 180,150 250,140 C 360,120 540,135 615,185 C 645,205 645,245 610,265 C 540,215 200,205 115,260 Z" fill="url(#crustGrad)" />
+    
+    <!-- Top crust soft highlight -->
+    <path d="M 140,220 C 190,175 320,148 450,148 C 540,148 590,175 605,200 C 530,170 240,170 140,220 Z" fill="url(#crustHighlight)" opacity="0.6" />
+
+    <!-- Crust Cuts/Slashes (Vết rạch bánh mì giòn) -->
+    <!-- Slash 1 -->
+    <path d="M 210,180 Q 230,175 240,205" fill="none" stroke="#78350f" stroke-width="6" stroke-linecap="round" />
+    <path d="M 212,182 Q 228,178 238,203" fill="none" stroke="#fef3c7" stroke-width="2" stroke-linecap="round" />
+
+    <!-- Slash 2 -->
+    <path d="M 330,170 Q 355,165 365,195" fill="none" stroke="#78350f" stroke-width="6" stroke-linecap="round" />
+    <path d="M 332,172 Q 353,168 363,193" fill="none" stroke="#fef3c7" stroke-width="2" stroke-linecap="round" />
+
+    <!-- Slash 3 -->
+    <path d="M 450,170 Q 475,165 485,195" fill="none" stroke="#78350f" stroke-width="6" stroke-linecap="round" />
+    <path d="M 452,172 Q 473,168 483,193" fill="none" stroke="#fef3c7" stroke-width="2" stroke-linecap="round" />
+    
+    <!-- Slash 4 -->
+    <path d="M 550,185 Q 570,180 580,210" fill="none" stroke="#78350f" stroke-width="6" stroke-linecap="round" />
+    <path d="M 552,187 Q 568,183 578,208" fill="none" stroke="#fef3c7" stroke-width="2" stroke-linecap="round" />
+
+  </g>
+
+  <!-- Love stamp theme: Small heart glowing overlay -->
+  <g transform="translate(620, 90)">
+    <circle cx="20" cy="20" r="35" fill="#cf2027" opacity="0.1" />
+    <path d="M 20,32 C 20,32 12,22 12,16 C 12,10 17,6 20,11 C 23,6 28,10 28,16 C 28,22 20,32 20,32 Z" fill="#cf2027" transform="scale(1.2) translate(-3, -5)" />
+  </g>
+</svg>

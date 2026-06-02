@@ -4,9 +4,14 @@
   "description": "Simple static file server for Love Banh Mi",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js 8085"
+    "start": "node server.js 8085",
+    "build": "echo 'Build complete'",
+    "dev": "node server.js 8085"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "engines": {
+    "node": "18.x"
+  }
 }

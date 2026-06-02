@@ -5,15 +5,12 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js 8085",
-    "build": "echo 'Build complete'",
+    "build": "mkdir -p public && cp -R index.html styles.css app.js pdf_viewer.html giay_phep_kinh_doanh.html love_banh_mi_stamp.svg bb.pdf Quyet_dinh_thanh_lap_LOVE_BANH_MI_Xac_Minh_Gốc.pdf images public/",
     "dev": "node server.js 8085"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "express": "^4.18.2"
-  },
   "engines": {
     "node": "24.x"
   }
